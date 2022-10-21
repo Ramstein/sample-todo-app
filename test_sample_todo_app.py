@@ -11,14 +11,14 @@ capabilities = {
     "browserName" : "Chrome",
     "version" : "88.0",
     "resolution" : "1920x1080",
-    "tunnel" : True
+    "tunnel" : True  # Tunnel opens a connection from my computer to lambda test platform which allows lambda test platform to access a locally hosted website on my computer
 }
 driver = webdriver.Remote(
     desired_capabilities= capabilities,
     command_executor= url
 )
 driver.get("http://localhost:8081/")
-driver.find_element_by_name("li3").click()
+driver.find_element_by_name("li3").click() # li3 = line item 3
 
 textbox = driver.find_element_by_id("sampletodotext")
 textbox.send_keys("Testing")
